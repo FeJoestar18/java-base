@@ -1,4 +1,4 @@
-package com.AM.java_base.domain.service;
+package com.AM.java_base.domain.service.auth;
 
 import com.AM.java_base.infrastructure.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

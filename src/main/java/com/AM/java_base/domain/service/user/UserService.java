@@ -1,6 +1,6 @@
-package com.AM.java_base.domain.service;
+package com.AM.java_base.domain.service.user;
 
-import com.AM.java_base.application.dto.UserRequestDTO;
+import com.AM.java_base.application.dto.user.UserRequestDTO;
 import com.AM.java_base.domain.entities.Role;
 import com.AM.java_base.domain.entities.User;
 import com.AM.java_base.infrastructure.repository.UserRepository;

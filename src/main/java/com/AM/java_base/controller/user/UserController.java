@@ -1,8 +1,8 @@
-package com.AM.java_base.controller;
+package com.AM.java_base.controller.user;
 
-import com.AM.java_base.application.dto.UserDeleteRequestDTO;
-import com.AM.java_base.domain.service.UserService;
-import com.AM.java_base.application.dto.UserRequestDTO;
+import com.AM.java_base.application.dto.user.UserDeleteRequestDTO;
+import com.AM.java_base.domain.service.user.UserService;
+import com.AM.java_base.application.dto.user.UserRequestDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,6 +1,6 @@
-package com.AM.java_base.controller;
+package com.AM.java_base.controller.auth;
 
-import com.AM.java_base.application.dto.AuthDTO;
+import com.AM.java_base.application.dto.auth.AuthDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
