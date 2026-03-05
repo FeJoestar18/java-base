@@ -1,6 +1,13 @@
 package com.AM.java_base.domain.entities;
+import com.AM.java_base.domain.enums.RoleName;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
+import java.util.List;
 
 @Getter
 @Setter
@@ -10,7 +17,7 @@ import lombok.*;
 @Table(name = "users")
 @Entity
 
-public class User {
+public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,4 +39,27 @@ public class User {
     @JoinColumn(name = "role_id", nullable = true)
     private Role role;
 
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+
+        if (this.role.getName() == RoleName.ADMIN)
+            return List.of(
+                    new SimpleGrantedAuthority("ROLE_ADMIN"),
+                    new SimpleGrantedAuthority("ROLE_USER")
+            );
+
+        if (this.role.getName() == RoleName.MANAGER)
+            return List.of(
+                    new SimpleGrantedAuthority("ROLE_MANAGER"),
+                    new SimpleGrantedAuthority("ROLE_USER")
+            );
+
+        return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+    }
+
+    @Override
+    public String getUsername() {
+        return email;
+    }
 }
