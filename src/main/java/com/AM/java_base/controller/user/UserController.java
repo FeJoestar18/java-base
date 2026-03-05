@@ -17,12 +17,6 @@ public class UserController {
             this.userService = userService;
         }
 
-        @PostMapping
-        public ResponseEntity<Void> registerUser(@RequestBody UserRequestDTO dto) {
-            userService.registerUser(dto);
-            return  ResponseEntity.ok().build();
-        }
-
         @GetMapping()
         public ResponseEntity<?> getUserById(@PathVariable UserGetDTO dto) {
             Integer id = dto.getId();

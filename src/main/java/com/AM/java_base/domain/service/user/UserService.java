@@ -20,22 +20,6 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public void registerUser(UserRequestDTO dto) {
-
-        Role role = new Role();
-        role.setId(dto.getRoleId());
-
-        User user = User.builder()
-                .name(dto.getName())
-                .email(dto.getEmail())
-                .cpf(dto.getCpf())
-                .password(passwordEncoder.encode(dto.getPassword()))
-                .role(role)
-                .build();
-
-        userRepository.save(user);
-    }
-
     public User getUserById(Integer id) {
         return userRepository.findById(id)
                 .orElseThrow(() ->
