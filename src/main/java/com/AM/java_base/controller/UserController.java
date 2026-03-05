@@ -1,7 +1,7 @@
 package com.AM.java_base.controller;
 
-import com.AM.java_base.business.UserService;
-import com.AM.java_base.dto.UserRequestDTO;
+import com.AM.java_base.domain.service.UserService;
+import com.AM.java_base.application.dto.UserRequestDTO;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,8 +16,8 @@ public class UserController {
         }
 
         @PostMapping
-        public ResponseEntity<Void> saveUser(@RequestBody UserRequestDTO dto) {
-            userService.saveUser(dto);
+        public ResponseEntity<Void> registerUser(@RequestBody UserRequestDTO dto) {
+            userService.registerUser(dto);
             return  ResponseEntity.ok().build();
         }
 

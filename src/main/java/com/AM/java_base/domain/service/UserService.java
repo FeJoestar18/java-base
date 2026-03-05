@@ -1,7 +1,7 @@
-package com.AM.java_base.business;
+package com.AM.java_base.domain.service;
 
-import com.AM.java_base.dto.UserRequestDTO;
-import com.AM.java_base.infrastructure.entitys.User;
+import com.AM.java_base.application.dto.UserRequestDTO;
+import com.AM.java_base.domain.entities.User;
 import com.AM.java_base.infrastructure.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public void saveUser(UserRequestDTO dto) {
+    public void registerUser(UserRequestDTO dto) {
         User user = User.builder()
                 .name(dto.getName())
                 .email(dto.getEmail())

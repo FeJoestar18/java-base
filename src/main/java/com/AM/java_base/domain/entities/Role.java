@@ -1,4 +1,4 @@
-package com.AM.java_base.infrastructure.entitys;
+package com.AM.java_base.domain.entities;
 import jakarta.persistence.*;
 import lombok.*;
 

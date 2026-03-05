@@ -1,4 +1,4 @@
-package com.AM.java_base.dto;
+package com.AM.java_base.application.dto;
 
 import lombok.*;
 
