@@ -1,26 +1,23 @@
 package com.AM.java_base.domain.entities;
+
+import com.AM.java_base.domain.enums.RoleName;
 import jakarta.persistence.*;
 import lombok.*;
 
+@Entity
+@Table(name = "role")
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-@Table(name = "Role")
-@Entity
 
 public class Role {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "name", nullable = false, unique = true)
-    private String name;
-
-    @OneToMany
-    @JoinColumn(name = "role_id")
-    private java.util.List<User> users;
-
+    @Enumerated(EnumType.STRING)
+    private RoleName name;
 }
