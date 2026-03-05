@@ -1,6 +1,7 @@
 package com.AM.java_base.controller.user;
 
 import com.AM.java_base.application.dto.user.UserDeleteRequestDTO;
+import com.AM.java_base.application.dto.user.UserGetDTO;
 import com.AM.java_base.domain.service.user.UserService;
 import com.AM.java_base.application.dto.user.UserRequestDTO;
 import org.springframework.http.ResponseEntity;
@@ -22,10 +23,10 @@ public class UserController {
             return  ResponseEntity.ok().build();
         }
 
-        @GetMapping("/{email}")
-        public ResponseEntity<?> getUserByEmail(@PathVariable UserRequestDTO dto) {
-            String email = dto.getEmail();
-            return ResponseEntity.ok(userService.getUserByEmail(email));
+        @GetMapping()
+        public ResponseEntity<?> getUserById(@PathVariable UserGetDTO dto) {
+            Integer id = dto.getId();
+            return ResponseEntity.ok(userService.getUserById(id));
         }
 
         @DeleteMapping

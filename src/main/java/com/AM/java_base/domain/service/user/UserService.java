@@ -36,10 +36,10 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public User getUserByEmail(String email) {
-        return userRepository.findByEmail(email)
+    public User getUserById(Integer id) {
+        return userRepository.findById(id)
                 .orElseThrow(() ->
-                        new RuntimeException("User not found with email: " + email)
+                        new RuntimeException("User not found with email: " + id)
                 );
     }
 
