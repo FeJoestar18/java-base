@@ -2,6 +2,7 @@ package com.AM.java_base.domain.entities;
 import com.AM.java_base.domain.enums.RoleName;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.beans.PropertyValues;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
