@@ -5,6 +5,8 @@ import com.AM.java_base.domain.entities.Product;
 import com.AM.java_base.infrastructure.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProductService {
 
@@ -24,8 +26,12 @@ public class ProductService {
         productRepository.save(product);
     }
 
-    void deleteProductById(Integer id) {
+    public void deleteProductById(Integer id) {
         productRepository.deleteById(id);
+    }
+
+    public List<Product> getAllProducts() {
+        return productRepository.findAll();
     }
 
     public Product getProduct(Integer id) {
