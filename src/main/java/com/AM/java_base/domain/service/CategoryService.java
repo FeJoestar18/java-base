@@ -5,6 +5,8 @@ import com.AM.java_base.application.dto.CategoryRequestDTO;
 import com.AM.java_base.domain.entities.Category;
 import com.AM.java_base.infrastructure.repository.CategoryRepository;
 
+import java.util.List;
+
 @Service
 public class CategoryService {
 
@@ -23,7 +25,7 @@ public class CategoryService {
         categoryRepository.save(category);
     }
 
-    void deleteCategoryById(Integer id) {
+    public void deleteCategoryById(Integer id) {
         categoryRepository.deleteById(id);
     }
 
@@ -34,6 +36,10 @@ public class CategoryService {
                 );
 
         return category;
+    }
+
+    public List<Category> getAllCategories() {
+        return categoryRepository.findAll();
     }
 
     public void updateCategoryById(Integer id, CategoryRequestDTO dto) {
