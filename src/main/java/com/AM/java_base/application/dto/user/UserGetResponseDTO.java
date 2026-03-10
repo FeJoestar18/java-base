@@ -1,6 +1,5 @@
 package com.AM.java_base.application.dto.user;
 
-
 import lombok.*;
 
 @Getter
@@ -9,7 +8,12 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 
-public class UserGetDTO {
+public class UserGetResponseDTO {
 
     private Integer id;
+    private String name;
+    private String email;
+    private String cpf;
+    private Integer roleId;
+
 }
